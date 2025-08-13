@@ -3,7 +3,6 @@ package model
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -53,7 +52,7 @@ func (g *Gemini) Generate(text string) (string, error) {
 	jsonBody, err := json.Marshal(contents)
 
 	if err != nil {
-		return "", errors.New("에러 발생")
+		return "", err
 	}
 
 	url := fmt.Sprintf("%s/models/%s:generateContent",
@@ -62,7 +61,7 @@ func (g *Gemini) Generate(text string) (string, error) {
 
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonBody))
 	if err != nil {
-		return "", errors.New("에러 발생")
+		return "", err
 	}
 
 	req.Header.Set("ContentType", "application/json")
@@ -72,12 +71,12 @@ func (g *Gemini) Generate(text string) (string, error) {
 
 	resp, err := client.Do(req)
 	if err != nil {
-		return "", errors.New("에러 발생")
+		return "", err
 	}
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return "", errors.New("에러 발생")
+		return "", err
 	}
 
 	var response Response

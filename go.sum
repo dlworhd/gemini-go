@@ -1,2 +1,4 @@
+github.com/dlworhd/logxyz v0.0.12 h1:vxJYWHplVV1cpuk9lAFiLTvvq4UQURWcIfYTWZCPUtY=
+github.com/dlworhd/logxyz v0.0.12/go.mod h1:+8uWfIA3EHcNkGVV3Y8bVESb4445a1MHstQHMGZGM2Q=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
